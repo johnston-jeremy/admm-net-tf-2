@@ -7,7 +7,7 @@ import scipy.io
 import time
 import random as rd
 import train_net as tn
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 
 def generate_data(A, sparsity, Nsamp, SNR, mismatch):
     m, n = A.shape
@@ -332,7 +332,7 @@ def train_new():
   # SNR_list = [15]
   # files = ['siso_d_8x23_SNR=10dB_10stages_admm_untied_04_27_2020_13_30_22', 'siso_d_8x23_SNR=20dB_10stages_admm_untied_04_27_2020_13_33_48', 'siso_d_8x23_SNR=30dB_10stages_admm_untied_04_27_2020_13_37_32', 'siso_d_8x23_SNR=40dB_10stages_admm_untied_04_27_2020_13_40_56']
   # num_stages_list = range(5,16,2)
-  num_stages_list = [1,2,3]
+  num_stages_list = [10]
 
   # sparsities = list(zip(range(2,9),7*[1]))
   # sparsities = [(2,8),(2,10),(2,12),(2,14)]
@@ -468,6 +468,6 @@ def train_new_iteratively(SNR, scenario):
 # train_new()
 # train_old()
 # eval_old_net()
-for scenario in ['mimo_d']:
-  for SNR in [30]:
+for scenario in ['siso','siso_d','mimo_d']:
+  for SNR in [15,20,25,30,35]:
     train_new_iteratively(SNR, scenario)
