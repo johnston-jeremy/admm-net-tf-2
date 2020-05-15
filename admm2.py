@@ -20,7 +20,7 @@ from tensorflow.keras import losses
 from tensorflow.python.framework import ops
 from tensorflow.python.keras import backend as K
 from tensorflow.python.ops import math_ops
-# import tensorflow_probability as tfp
+import tensorflow_probability as tfp
 
 class MeanPercentageSquaredError(tf.keras.losses.Loss):
     def call(self, y_true, y_pred):
